@@ -11,5 +11,7 @@ dagshub
 fastapi
 uvicorn
 python-multipart
+pymongo[srv]==3.6
+pymongo
 
 #-e .
