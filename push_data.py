@@ -16,6 +16,8 @@ import pymongo
 import numpy as np
 from networksecurity.exception.exception import NetworkSecurityException    
 from networksecurity.logging.logger import logging
+from networksecurity.entity.config_entity import DataIngestionConfig, TrainingPipelineConfig
+from networksecurity.entity.artifact_entity import DataIngestionArtifact
 
 class NetworkDataExtract():
     def __init__(self):
