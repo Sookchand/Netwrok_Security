@@ -58,3 +58,23 @@ if __name__ == "__main__":
     print(records)
     no_of_records = networkobj.insert_data_mongodb(records, DATABASE, Collection)
     print(f"Number of records inserted in MongoDB: {no_of_records}")
+
+    # # Read train_data.csv
+    # train_data_path = "Artifacts/06_29_2021_12_00_00/data_ingestion/train_data.csv"
+    # try:
+    #     train_data = pd.read_csv(train_data_path)
+    #     print("Train Data:")
+    #     print(train_data.head())
+    # except FileNotFoundError as e:
+    #     print(f"Error reading train_data.csv: {e}")
+    #     # Provide the correct path if the file is located elsewhere
+    #     correct_train_data_path = "correct/path/to/train_data.csv"
+    #     try:
+    #         train_data = pd.read_csv(correct_train_data_path)
+    #         print("Train Data:")
+    #         print(train_data.head())
+    #     except Exception as e:
+    #         print(f"Error reading train_data.csv from the correct path: {e}")
+    # except Exception as e:
+    #     print(f"Error reading train_data.csv: {e}")
+
