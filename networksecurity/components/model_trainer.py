@@ -26,10 +26,12 @@ from urllib.parse import urlparse
 
 import dagshub
 
+dagshub.init(repo_owner='Sookchand', repo_name='Network_Security', mlflow=True)
 
-os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/Sookchand/datascience_project.mlflow"
-os.environ["MLFLOW_TRACKING_USERNAME"]="Sookchand"
-os.environ["MLFLOW_TRACKING_PASSWORD"]="5fffcc6146291772ba8e06efd88b25d685ddc25a"
+
+# os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/Sookchand/datascience_project.mlflow"
+# os.environ["MLFLOW_TRACKING_USERNAME"]="Sookchand"
+# os.environ["MLFLOW_TRACKING_PASSWORD"]="5fffcc6146291772ba8e06efd88b25d685ddc25a"
 
 # print(os.environ.get("MLFLOW_TRACKING_URI"))
 # print(os.environ.get("MLFLOW_TRACKING_USERNAME"))
@@ -117,8 +119,9 @@ class ModelTrainer:
 
         Network_Model = NetworkModel(preprocessor=preprocessor, model=best_model)
         save_object(self.model_trainer_config.trained_model_file_path, obj=Network_Model)
+        
         # model pusher
-        save_object("final_model/model.pkl", best_model)
+        save_object("final_model/model.pkl", best_model) # Output: None
         
         ## Model Trainer Artifact
         model_trainer_artifact = ModelTrainerArtifact(trained_model_file_path=self.model_trainer_config.trained_model_file_path,
